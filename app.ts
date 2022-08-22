@@ -360,12 +360,20 @@ let newEmloyers: CurrentEmployee[] = [
 ];
 
 function showDay(year?: number, month?: number, day?: number) {
+  let newDate;
+  let dayOfWeek;
   if (year && month && day) {
-    const date = new Date(year, month, day);
-    let dayOfWeek = date.getDay();
-    return dayOfWeek;
-  } else {
-    return "I require comlite date";
+    newDate = new Date(year, month, day);
+    dayOfWeek = newDate.getDay();
+  } else if (month && day) {
+    year = new Date().getFullYear(); // get year
+    newDate = new Date(year, month, day); // create new date
+    dayOfWeek = newDate.getDay(); // extract day of week
+  } else if (year && day) {
+    month = new Date().getMonth(); // get month
+    newDate = new Date(year, month, day); // create new date
+    dayOfWeek = newDate.getDay(); // extract day of week
   }
+  return dayOfWeek;
 }
-console.log(showDay(2022, 10, 6));
+console.log(showDay(undefined, 9, 19));
