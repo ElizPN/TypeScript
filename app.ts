@@ -389,7 +389,6 @@ function raiseToPower(num: number, power: number = 2) {
 console.log(raiseToPower(2));
 
 // Rest parametrs on functions
-
 function getSum(...rest: number[]): number {
   let sum = 0;
   for (let value of rest) {
@@ -398,3 +397,71 @@ function getSum(...rest: number[]): number {
   return sum;
 }
 console.log(getSum(1, 2, 3));
+
+// Function type
+let myFun: (x: number, y: number) => number;
+myFun = function (x: number, y: number): number {
+  return x + y;
+};
+
+type Func = (text: string) => void;
+let func: Func = function (text: string): void {
+  console.log(text);
+};
+
+type Func2 = (a: number, b: number) => number;
+let func2: Func2 = function (a: number, b: number): number {
+  return a * b;
+};
+
+// callbacks
+
+function make(amount: number, fun: (num: number) => number): number {
+  return fun(amount);
+}
+
+let showRes = make(3, function (num): number {
+  return num * 2;
+});
+console.log(showRes);
+
+type Func3 = (num: number) => number;
+
+function making(arr: number[], func: Func3): number[] {
+  return arr.map(function (elem: number) {
+    return func(elem);
+  });
+}
+
+let result1: number[] = making([1, 2, 3], function (num: number): number {
+  return num ** 2;
+});
+
+console.log(result1);
+
+type Func4 = (num: number) => number;
+
+function newMaking(arr: number[], func: Func4): number {
+  let sum = 0;
+
+  for (let elem of arr) {
+    sum += func(elem);
+  }
+
+  return sum;
+}
+
+let myResult: number = newMaking([1, 2, 3], function (num): number {
+  return num ** 2;
+});
+
+console.log(myResult);
+
+// Array functions
+let myfunc = (num1: number, num2: number): number => num1 + num2;
+
+let myFunc2 = (str: string): string[] => str.split("");
+
+let myArr: number[] = [1, 2, 3];
+let myres = myArr.map((num: number): number => num ** 2);
+console.log(myres, "myres");
