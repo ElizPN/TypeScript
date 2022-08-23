@@ -378,6 +378,7 @@ function showDay(year?: number, month?: number, day?: number) {
 }
 console.log(showDay(undefined, 9, 19));
 
+// Default values in functions
 function raiseToPower(num: number, power: number = 2) {
   let res = 1;
   for (let i = 0; i < power; i++) {
@@ -386,3 +387,14 @@ function raiseToPower(num: number, power: number = 2) {
   return res;
 }
 console.log(raiseToPower(2));
+
+// Rest parametrs on functions
+
+function getSum(...rest: number[]): number {
+  let sum = 0;
+  for (let value of rest) {
+    sum += value;
+  }
+  return sum;
+}
+console.log(getSum(1, 2, 3));
