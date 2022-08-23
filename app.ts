@@ -377,3 +377,12 @@ function showDay(year?: number, month?: number, day?: number) {
   return dayOfWeek;
 }
 console.log(showDay(undefined, 9, 19));
+
+function raiseToPower(num: number, power: number = 2) {
+  let res = 1;
+  for (let i = 0; i < power; i++) {
+    res *= num;
+  }
+  return res;
+}
+console.log(raiseToPower(2));
