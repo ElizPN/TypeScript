@@ -25,5 +25,5 @@ function stringPush(val) {
   }
   return customersArray;
 }
-let res = stringPush("hallo");
+let res = stringPush("hallo"); // return index of element
 console.log(res);
