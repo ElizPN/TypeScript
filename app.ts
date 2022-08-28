@@ -14,6 +14,29 @@ console.log(test3);
 let arr: number[] = [1, 2, 3, 4, 5];
 let arr2: Array<number> = [1, 2, 3, 4, 5];
 
+// Arrays:
+let bestNumbers: number[] = [7, 77, 4];
+let bestLunches: string[] = ["chicken soup", "non-chicken soup"];
+let bestBreakfasts: string[] = [
+  "fasting",
+  "oatmeal",
+  "tamago kake gohan",
+  "any kind of soup",
+];
+let bestBooleans: boolean[] = [true, false];
+
+// Multidimensional Arrays:
+let bestMealPlan: string[][] = [
+  bestLunches,
+  bestBreakfasts,
+  ["baked potato", "mashed potato"],
+];
+let bestBooleansTwice: boolean[][] = [bestBooleans, bestBooleans];
+let numbersMulti: number[][][] = [
+  [[1], [2, 3]],
+  [[7], bestNumbers],
+];
+
 // We can not change structure of object, only value of keys
 let user = { name: "john", age: 30 };
 user = { name: "lila", age: 70 };
