@@ -84,6 +84,15 @@ let yearMonthDay: [number, number, number] = [2022, 8, 18];
 yearMonthDay[0] = 2023;
 console.log(yearMonthDay);
 
+let favoriteCoordinates: [number, number, string, number, number, string] = [
+  40,
+  43.2,
+  "N",
+  73,
+  59.8,
+  "W",
+];
+
 // We can not change the array
 let user2: readonly [string, number] = ["John", 30];
 
