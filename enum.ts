@@ -16,3 +16,10 @@ let ordersArrayTS: [Pet, number][] = [
 
 ordersArrayTS.push([Pet.jerboa, 3]);
 console.log(ordersArrayTS);
+
+enum PetStr {
+  Hamster = "HAMSTER",
+  Rat = "RAT",
+  Chinchilla = "CHINCHILLA",
+  Tarantula = "TARANTULA",
+}
